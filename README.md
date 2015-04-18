@@ -1,6 +1,4 @@
 # NightwatchJs
 
-Nightwatch example
-
-For configuring and getting started : http://nightwatchjs.org/
+Nightwatch E2E test example. For getting started visit : http://nightwatchjs.org/
 
