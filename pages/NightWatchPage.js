@@ -15,6 +15,12 @@ NightWatchPage.prototype = {
     this.browser.waitForElementVisible(LOCATORS['github'], timeout)
   },
 
+   navigateToNighWatchPage : function(){
+    this.browser.maximizeWindow()
+    this.browser.url(url)
+    this.browser.waitForElementVisible('body', timeout)
+  },
+
   assertUrl : function(){
     this.browser.useCss().waitForElementVisible(LOCATORS['github'], timeout)
     this.browser.assert.urlContains(url)

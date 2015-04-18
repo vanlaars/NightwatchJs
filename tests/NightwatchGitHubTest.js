@@ -1,5 +1,4 @@
 // Import Page Objects
-var GooglePage = require('../pages/GooglePage')
 var NightWatchPage = require('../pages/NightWatchPage')
 var NightWatchGitHubPage = require('../pages/NightWatchGitHubPage')
 
@@ -11,10 +10,9 @@ module.exports = {
   // tags that can be used for cli override
   tags: ['github', 'nightwatch'],
 
-  'Search at Google.co.uk' : function (browser) {
-    googlePage = new GooglePage(browser);
-    googlePage.navigateToGoogle();
-    googlePage.searchFor('nightwatchjs');
+  'Navigate to NightWatch page' : function (browser) {
+    nightWatchPage = new NightWatchPage(browser);
+    nightWatchPage.navigateToNighWatchPage();
   },
 
   'Click on GitHub button' : function (browser) {

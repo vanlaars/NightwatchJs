@@ -29,7 +29,7 @@
         "path" : ""
       },
       "desiredCapabilities": {
-        "browserName": "firefox",
+        "browserName": "phantomjs",
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }
