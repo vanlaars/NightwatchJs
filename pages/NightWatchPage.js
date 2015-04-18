@@ -22,11 +22,11 @@ NightWatchPage.prototype = {
   },
 
   assertUrl : function(){
-    this.browser.useCss().waitForElementVisible(LOCATORS['github'], timeout)
     this.browser.assert.urlContains(url)
   },
 
   navigateToGithub : function(){
+    this.browser.waitForElementVisible(LOCATORS['github'], timeout)
   	this.browser.useCss().click(LOCATORS['github'])    
   },
 

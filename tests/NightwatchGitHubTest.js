@@ -13,11 +13,11 @@ module.exports = {
   'Navigate to NightWatch page' : function (browser) {
     nightWatchPage = new NightWatchPage(browser);
     nightWatchPage.navigateToNighWatchPage();
+    nightWatchPage.assertUrl();
   },
 
   'Click on GitHub button' : function (browser) {
     nightWatchPage = new NightWatchPage(browser);
-    nightWatchPage.assertUrl();
     nightWatchPage.navigateToGithub();
   },
 

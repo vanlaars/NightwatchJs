@@ -5,7 +5,7 @@ var LOCATORS = {
 
 var TEXT = {
   repoDescriptionText : 'UI automated testing framework based on node.js and selenium webdriver',
-  currentRepoText : 'nightwatch',
+  currentRepoText     : 'nightwatch',
 }
 
 var timeout = 10000;
@@ -29,10 +29,10 @@ NightWatchGithubPage.prototype = {
   },
 
   assertRepo : function(){
+    this.browser.assert.urlContains(url);
     this.browser.useCss().waitForElementVisible(LOCATORS['repoDescription'], timeout)
     this.browser.assert.containsText(LOCATORS['repoDescription'], TEXT['repoDescriptionText']);
     this.browser.assert.containsText(LOCATORS['currentRepo'], TEXT['currentRepoText']);
-    this.browser.assert.urlContains(url);
   },
 
 }
