@@ -3,7 +3,7 @@ var NightWatchPage = require('../pages/NightWatchPage')
 var NightWatchGitHubPage = require('../pages/NightWatchGitHubPage')
 
 // Pages 
-var googlePage, nightWatchPage, nightWatchGitHubPage
+var nightWatchPage, nightWatchGitHubPage
   
 // Test 
 module.exports = {
@@ -36,7 +36,6 @@ module.exports = {
   'Goto Twitter Page NightWatch' : function(browser){
     nightWatchPage = new NightWatchPage(browser);
     nightWatchPage.navigateToTwitter();
-    // refactor this and create BasePage for switching and asserting url
     nightWatchGitHubPage.swithToTab(browser, 2);
     browser.assert.urlContains('https://twitter.com/nightwatchjs');
   },
