@@ -22,10 +22,20 @@ NightWatchGithubPage.prototype = {
 
   swithToTab : function(browser){
     browser.window_handles(function(result){
-    var handle = result.value[1];
-    browser.switchWindow(handle);
-    });  
-    console.log('Switched to GitHub tab');
+        var handle = result.value[1];
+        browser.switchWindow(handle);
+      });  
+    console.log("Switched to tab ");
+    browser.saveScreenshot('../nightwatchjs/screenshot/Screenshot_NighWatch_GitHub_Page.png');
+  },
+
+  swithToTab : function(browser, tabNumber){
+    browser.window_handles(function(result){
+      var handle = result.value[tabNumber];
+      browser.switchWindow(handle);
+    });
+    console.log("Switched to tab ");
+    browser.saveScreenshot('../nightwatchjs/screenshot/Screenshot_NighWatch_GitHub_Page.png');
   },
 
   assertRepo : function(){

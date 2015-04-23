@@ -19,6 +19,7 @@ NightWatchPage.prototype = {
     this.browser.maximizeWindow()
     this.browser.url(url)
     this.browser.waitForElementVisible('body', timeout)
+    this.browser.saveScreenshot('../nightwatchjs/screenshot/Screenshot_NighWatch_Home_Page.png');
   },
 
   assertUrl : function(){
@@ -31,9 +32,9 @@ NightWatchPage.prototype = {
   },
 
   navigateToTwitter : function(){
-    this.browser.useCss().click(LOCATORS['twitter'])    
-  },
-
+      this.browser.waitForElementVisible(LOCATORS['twitter'], timeout)
+      this.browser.useCss().click(LOCATORS['twitter'])
+  }
 
 }
 

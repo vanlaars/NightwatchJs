@@ -23,8 +23,22 @@ module.exports = {
 
   'Switch to new tab and check NightWatch GitHub Page' : function (browser) {
     nightWatchGitHubPage = new NightWatchGitHubPage(browser);
-    nightWatchGitHubPage.swithToTab(browser);
+    nightWatchGitHubPage.swithToTab(browser, 1);
     nightWatchGitHubPage.assertRepo();
+  },
+
+  'Switch back to NightWatch page' : function(browser){
+    nightWatchGitHubPage = new NightWatchGitHubPage(browser);
+    nightWatchGitHubPage.swithToTab(browser, 0);
+    nightWatchPage.assertUrl();
+  },
+
+  'Goto Twitter Page NightWatch' : function(browser){
+    nightWatchPage = new NightWatchPage(browser);
+    nightWatchPage.navigateToTwitter();
+    // refactor this and create BasePage for switching and asserting url
+    nightWatchGitHubPage.swithToTab(browser, 2);
+    browser.assert.urlContains('https://twitter.com/nightwatchjs');
   },
 
   ' Stop browser' : function (browser) {
